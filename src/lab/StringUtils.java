@@ -10,8 +10,16 @@ public class StringUtils {
      */
     public static int countVowels(String text) {
         // TODO: ถ้า text เป็น null ให้ throw IllegalArgumentException
+        if (text == null)throw new IllegalArgumentException("ไม่มีข้อความ");
         // TODO: วนนับสระ a,e,i,o,u (พิมพ์เล็ก/ใหญ่) แล้ว return
+        int countt = 0;
+        String lowerText = "aeiou";
+        text = text.toLowerCase();
+        for(int i = 0 ; i < text.length() ; i++)
+            for(int j = 0 ; j < lowerText.length() ; j++)
+                if (text.charAt(i)==lowerText.charAt(j)) countt++;
+                    return countt;
         //       (ใช้ตัวแปร local เท่านั้น = pure function)
-        return 0;
+
     }
 }
